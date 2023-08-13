@@ -1,0 +1,46 @@
+<section class="form-section bg-light mb-5">
+  <div class="container-sm d-flex justify-content-center p-2">
+    <div class="row">
+      <div class="col-sm-2 mt-2 mb-2">
+        <select
+          class="form-select"
+          aria-label="Form select profits less"
+          [ngClass]="{ 'ingreso-focus': isRevenue, 'egreso-focus': !isRevenue }"
+          (change)="changeStateTransaction($event)"
+        >
+          <option value="ingreso">+</option>
+          <option value="egreso">-</option>
+        </select>
+      </div>
+
+      <div class="col-sm-6 mt-2 mb-2">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Descripcion"
+          [(ngModel)]="descriptionValue"
+          [ngClass]="{ 'ingreso-focus': isRevenue, 'egreso-focus': !isRevenue }"
+        />
+      </div>
+
+      <div class="col-sm-3 mt-2 mb-2">
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Valor"
+          min="0"
+          [(ngModel)]="amountValue"
+          [ngClass]="{ 'ingreso-focus': isRevenue, 'egreso-focus': !isRevenue }"
+        />
+      </div>
+
+      <div class="col-sm-1 mt-2 mb-2">
+        <i
+          class="bi bi-check-circle text-success"
+          style="font-size: 24px"
+          (click)="sendDataRegister()"
+        ></i>
+      </div>
+    </div>
+  </div>
+</section>

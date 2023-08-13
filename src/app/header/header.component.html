@@ -1,0 +1,30 @@
+<header class="header-quote">
+  <div class="container d-flex flex-column align-items-center p-3">
+    <p class="header-quote__label text-white">Presupuesto disponible:</p>
+
+    <h1 class="header-quote__quot text-white mb-4">
+      {{ totalQuote | currency : "USD" : "$" : "1.2-2" }}
+    </h1>
+
+    <div
+      class="ingresos-box d-flex justify-content-between bg-primary p-3 mb-2"
+    >
+      <p class="ingresos-box__label">Ingresos</p>
+
+      <p class="ingresos-box__amount text-white">
+        {{ totalRevenuesValue | currency : "USD" : "$" : "1.2-2" }}
+      </p>
+    </div>
+
+    <div class="egresos-box d-flex justify-content-between bg-secondary p-3">
+      <p class="egresos-box__label">Egresos</p>
+
+      <p class="egresos-box__amount text-white">
+        <span class="badge bg-dark">{{
+          percentageExpenses | number : "1.2-2" | percent
+        }}</span>
+        {{ totalExpendsValue | currency : "USD" : "$" : "1.2-2" }}
+      </p>
+    </div>
+  </div>
+</header>

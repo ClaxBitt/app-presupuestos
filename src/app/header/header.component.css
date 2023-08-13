@@ -1,0 +1,30 @@
+.header-quote {
+  background-color: #2196f3;
+  background: url(../../assets/bg-pattern.png), #2196f3;
+  background: url(../../assets/bg-pattern.png),
+    -webkit-gradient(linear, right top, left top, from(#2196f3), to(#009688));
+  background: url(../../assets/bg-pattern.png),
+    linear-gradient(to left, #2196f3, #009688);
+}
+
+.header-quote__label {
+  font-size: 18px;
+}
+
+.ingresos-box,
+.egresos-box {
+  max-width: 500px;
+  width: 100%;
+}
+
+.ingresos-box > p,
+.egresos-box > p {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.ingresos-box__amount,
+.egresos-box__amount {
+  font-size: 18px;
+}

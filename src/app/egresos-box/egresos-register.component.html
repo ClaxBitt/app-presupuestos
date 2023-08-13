@@ -1,0 +1,26 @@
+<section class="egresos-register">
+  <h3 class="text-secondary text-uppercase mb-3">Egresos</h3>
+
+  <table class="register-table table table-striped">
+    <tbody>
+      <tr
+        *ngFor="let expend of expendsRecord"
+        (mouseenter)="expend.hiddeXIcon = false"
+        (mouseleave)="expend.hiddeXIcon = true"
+      >
+        <td>{{ expend.getDescription() }}</td>
+        <td class="text-end text-danger">
+          -{{ expend.getValue() | currency : "USD" : "$" : "1.2-2" }}
+          <i
+            class="bi bi-x-circle ms-2"
+            [ngClass]="{
+              'd-none': expend.hiddeXIcon,
+              'd-inline-block': !expend.hiddeXIcon
+            }"
+            (click)="deleteExpend(expend)"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
